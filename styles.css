@@ -1,0 +1,53 @@
+html , body{
+    padding:0;
+    margin: 0;
+}
+:root{
+    --heading: rgb(211, 182, 211);
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.heads:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:10px;
+    background: linear-gradient(to left ,rgba(190, 84, 190, 0.678),rgba(111, 30, 96, 0.841));
+
+}
+.heads:after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    height:10px;
+    background: linear-gradient(to right,rgba(190, 84, 190, 0.678),rgba(111, 30, 96, 0.841));
+
+}
+
+.heads{
+    background-color: purple;
+    position:relative;
+   padding: 50px 30px;
+   color:white;
+   text-align:center;
+    
+}
+.bdy{
+    display: flex;
+    justify-content: center;
+}
+.bdy a{
+    
+    text-decoration: none;
+   padding:9px ;
+   border:1px solid var(--heading);
+   color: purple;
+   border-radius: 4px;
+   margin:20px;
+
+}
