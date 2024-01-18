@@ -98,6 +98,16 @@ function performOperations() {
       // Reverse method
       let reversedFruits = combinedFruits.reverse();
       console.log('Reversed fruits:', reversedFruits);
+        
+     //  length property
+      let myArray = [1, 2, 3, 4, 5];
+      let arrayLength = myArray.length;
+      console.log("Array Length:", arrayLength); 
+
+      // join method
+      let fruits1 = ["apple", "orange", "banana", "grape"];
+      let joinedFruits = fruits1.join(", "); 
+      console.log("Joined Fruits:", joinedFruits); 
     }
   
     // Call the additional function
