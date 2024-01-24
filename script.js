@@ -116,5 +116,80 @@ function performOperations() {
   
   // Call the main function
   performOperations();
+
+
+
+//1:
+
+// Function to check if a number is positive using promises :
+function isPositiveNumber(num) {
+  console.log("checking");
+  return new Promise((resolve, reject) => {
+    if (typeof num !== 'number' || num <= 0) {
+      reject("Invalid input. ");
+      return;
+    }else{
+       resolve(num);
+    }
+    console.log("checking2");
+  });
+}
+// Example
+const Mynum = 1;
+
+const positiveNumberPromise = isPositiveNumber(Mynum);
+
+positiveNumberPromise.then((num)=> {
+    console.log("Positive number:", num);
+  })
+  .catch((error) => {
+    console.log("pls provide a positive number",error);
+  });
+
+
+  //2.
+      //Reversing each words in a sentence using promises
+
+   // Example 
+   const inputString = "Just a random sentence to work on";
+  
+   // Using the Promise
+   reverseStringAsync(inputString)
+     .then((reversedString) => {
+       console.log("Promise resolved - Reversed String:", reversedString); // displayed after running promise function
+     })
+     .catch((error) => {
+       console.log("Promise rejected -", error); // catching reject and displaying a output
+     });
+
+
+  function reverseStringAsync(inputString) {
+    return new Promise((resolve, reject) => {
+
+      // for reject
+      const Rejectings = false;
+  
+      if (Rejectings) {
+        reject("Promise rejected - Unable to reverse string");
+      } else {
+        
+        const words = inputString.split(' '); //splits based on whitespace
+  
+        // Reverse each word in the array
+        const reversedWords = words.map(function(word) {
+          return word.split('').reverse().join(''); 
+        });
+  
+        // Joining back
+        const reversedString = reversedWords.join(' '); // jpining again with spaces
+  
+        resolve(reversedString);
+        console.log("String reversed!",reversedString); //displays first becoz promise runs asynchronously
+      }
+    });
+  }
+  
+ 
+  
   
   
