@@ -188,6 +188,34 @@ positiveNumberPromise.then((num)=> {
       }
     });
   }
+
+// 1. filtering out duplicates without using set operator
+
+  const array = [1, 2 , 1, 3, 2, 4];
+  const uniqueValuesArray = array.filter((value, index) => {
+      return array.indexOf(value) === index;
+  });
+  console.log(uniqueValuesArray);
+
+  //note : 1. indexOf does not goes on duplicate values      2. index is same as for-loop i 
+  //  index : 0(1) 1(2) 3(1) 4(3) 5(2) 5(4) ;
+  // indexof: 0(1) 1(2)   -  4(3)   -  5(4) ;  !!takes only the first occurence of a value
+
+  // 2. filtering out only the user name in json file using map function
+  async function fetchData() {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users');
+        if (!response.ok) {
+            throw new Error('Failed to fetch users');
+        }
+        const users = await response.json();
+        const usernames = users.map(user => user.username);
+        console.log('Usernames:', usernames);
+    } catch (error) {
+        console.error(error.message);
+    }
+}
+fetchData();
   
  
   
