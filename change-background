@@ -1,0 +1,29 @@
+import logo from './logo.svg';
+import './App.css';
+import { useState } from 'react';
+
+function App() {
+  const [clicked, setClicked] = useState(false);
+  const [buttonText, setButtonText] = useState('Click');
+  const [backgroundColor, setBackgroundColor] = useState('#ffffff');
+
+  const handleClick = () => {
+    if (clicked) {
+      setButtonText('Click');
+      setBackgroundColor('#ffffff'); 
+      document.body.style.backgroundColor = '#ffffff'; 
+    } else {
+      setButtonText('Clicked');
+      setBackgroundColor('#FFC0CB'); 
+      document.body.style.backgroundColor = '#FFC0CB'; 
+    }
+    setClicked(!clicked);
+  };
+  return (
+  <div className="App" style={{ backgroundColor: backgroundColor }}>
+      <button onClick={handleClick}>{buttonText}</button>
+    </div>
+  );
+};
+export default App;
+
